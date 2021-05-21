@@ -8,8 +8,7 @@ class ChangeBool extends ChangeValue
 
     public function __construct(
         public string $true = 'TRUE', 
-        public string $false = 'FALSE'
-        )
+        public string $false = 'FALSE')
     {
     }
 

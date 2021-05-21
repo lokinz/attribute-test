@@ -8,7 +8,7 @@ class MyModel
     public bool $getLogs = false;
 
     #[ChangeNote\ChangeName('IP Address')]
-    #[ChangeNote\ChangeValue]
+    #[ChangeNote\ChangeGeneric]
     public string $ip = '192.168.0.100';
 
     #[ChangeNote\ChangeName('GPS Source')]

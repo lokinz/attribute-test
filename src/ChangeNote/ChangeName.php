@@ -5,11 +5,7 @@ namespace App\ChangeNote;
 #[\Attribute]
 class ChangeName 
 {
-
-    public function __construct(
-        public string $name)
- {
- }
-
-
+    public function __construct(public string $name)
+    {
+    }
 }

@@ -2,10 +2,7 @@
 namespace App\ChangeNote;
 
 #[\Attribute]
-class ChangeValue
+abstract class ChangeValue
 {
-    public function getValue($value)
-    {
-        return $value;
-    }
+    abstract public function getValue($value);
 }

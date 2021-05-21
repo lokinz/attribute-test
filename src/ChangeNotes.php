@@ -76,7 +76,8 @@ class ChangeNotes
     {
         $attributes = $reflection->getAttributes(
             ChangeValue::class, 
-            ReflectionAttribute::IS_INSTANCEOF);
+            ReflectionAttribute::IS_INSTANCEOF
+        );
 
         if(!sizeof($attributes)){
             return null;
