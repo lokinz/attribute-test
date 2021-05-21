@@ -1,8 +1,8 @@
 <?php
-namespace App\ChangeNote;
+namespace App\ChangeNote\Attributes;
 
 #[\Attribute]
-class ChangeGeneric extends ChangeValue
+class Generic extends ChangeValue
 {
     public function getValue($value)
     {

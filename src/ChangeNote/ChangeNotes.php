@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\ChangeNote;
+use App\ChangeNote\Attributes as ChangeNote;
 
-use App\ChangeNote\ChangeName;
-use App\ChangeNote\ChangeValue;
 use InvalidArgumentException;
 use ReflectionAttribute;
+use ReflectionClass;
 
 class ChangeNotes
 {
@@ -17,7 +17,7 @@ class ChangeNotes
 
         $changes = [];
 
-        $reflection = new \ReflectionClass($before);
+        $reflection = new ReflectionClass($before);
         $properties = $reflection->getProperties();
 
         foreach ($properties as $property){
@@ -38,14 +38,14 @@ class ChangeNotes
 
         $reflection = new \ReflectionProperty($after, $property);
         $change = new Change;
-        
+
         $changeName = self::getChangeName($reflection);
         if(null === $changeName){
             return null;
         }
 
         $change->name = $changeName->name;
-        
+
         $changeValue = self::getChangeValue($reflection);
         if(null === $changeValue){
             return $change;
@@ -58,10 +58,10 @@ class ChangeNotes
        return $change;
     }
 
-    private static function getChangeName(\ReflectionProperty $reflection): ?ChangeName
+    private static function getChangeName(\ReflectionProperty $reflection): ?ChangeNote\PropertyName
     {
         $attributes = $reflection->getAttributes(
-            ChangeName::class, 
+            ChangeNote\PropertyName::class,
             ReflectionAttribute::IS_INSTANCEOF
         );
 
@@ -72,10 +72,10 @@ class ChangeNotes
         return $attributes[0]->newInstance();
     }
 
-    private static function getChangeValue(\ReflectionProperty $reflection): ?ChangeValue
+    private static function getChangeValue(\ReflectionProperty $reflection): ?ChangeNote\ChangeValue
     {
         $attributes = $reflection->getAttributes(
-            ChangeValue::class, 
+            ChangeNote\ChangeValue::class,
             ReflectionAttribute::IS_INSTANCEOF
         );
 

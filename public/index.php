@@ -1,9 +1,9 @@
-<?php 
+<?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\ChangeNotes;
+use App\ChangeNote\ChangeNotes;
 use App\main;
-use App\MyModel;
+use App\Models\MyModel;
 
 $main = new main();
 

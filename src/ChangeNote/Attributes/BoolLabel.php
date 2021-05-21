@@ -1,21 +1,21 @@
 <?php
 
-namespace App\ChangeNote;
+namespace App\ChangeNote\Attributes;
 
 #[\Attribute]
-class ChangeBool extends ChangeValue
+class BoolLabel extends ChangeValue
 {
 
     public function __construct(
-        public string $true = 'TRUE', 
+        public string $true = 'TRUE',
         public string $false = 'FALSE')
     {
     }
 
-    public function getValue($value)
+    public function getValue($value): string
     {
         $state = filter_var($value, FILTER_VALIDATE_BOOLEAN);
-        
+
         return $state ? $this->true : $this->false;
     }
 

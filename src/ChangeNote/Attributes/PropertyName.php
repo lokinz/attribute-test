@@ -1,9 +1,9 @@
 <?php
 
-namespace App\ChangeNote;
+namespace App\ChangeNote\Attributes;
 
 #[\Attribute]
-class ChangeName 
+class PropertyName
 {
     public function __construct(public string $name)
     {

@@ -1,5 +1,5 @@
 <?php
-namespace App\ChangeNote;
+namespace App\ChangeNote\Attributes;
 
 #[\Attribute]
 abstract class ChangeValue
