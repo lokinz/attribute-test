@@ -20,6 +20,7 @@ $model2->ip = '192.168.0.200';
 //var_dump($changes);
 
 $model1->gpsTraceId = '1235';
+$model2->codeDownload = 1;
 
 $changes = ChangeNotes::getChanges($model1, $model2);
 ?>
