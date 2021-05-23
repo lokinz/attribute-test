@@ -45,7 +45,7 @@ class ChangeNotes
             return null;
         }
 
-        $change->name = $changeName->name;
+        $change->name = $changeName->getName();
 
         $changeValue = self::getChangeValue($reflection);
         if (null === $changeValue) {
